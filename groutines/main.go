@@ -20,6 +20,8 @@ WaitGroup就是指等待一组，等待一个系列执行完成后才会继续�
     Done()：每次需要等待的goroutine在真正完成之前，应该调用该方法来人为表示goroutine完成了，该方法会对等待计数器减1
     Wait()：在等待计数器减为0之前，Wait()会一直阻塞当前的goroutine
     也就是说，Add()用来增加要等待的goroutine的数量，Done()用来表示goroutine已经完成了，减少一次计数器，Wait()用来等待所有需要等待的goroutine完成。
+4.默认CPU的逻辑核心数，默认跑满整个CPU
+	runtime.GOMAXPROCS(4)
 */
 
 func f1(i int) {
